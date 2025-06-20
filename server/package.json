@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
+    "postinstall": "npm run build",
     "start": "node dist/server.js"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.15.2",
+    "resend": "^4.6.0",
     "server": "file:",
     "zod": "^3.25.64"
   },

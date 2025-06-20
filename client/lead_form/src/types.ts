@@ -10,7 +10,7 @@ type UserLookingFor = {
   city: string;
   area: string[];
   type: string[];
-  number_rooms: number[];
+  number_rooms: string[];
   priority: string[];
   max_budget: number;
   other?: string;
@@ -18,12 +18,12 @@ type UserLookingFor = {
 
 
 type FormContext = {
-  index:number;
+  index: number;
   userInfoForm: UseFormReturn<UserInfoLead, any, UserInfoLead>;
   lookingForForm: UseFormReturn<UserLookingFor, any, UserLookingFor>;
   next: () => void;
   back: () => void;
-} 
+}
 
 
 export {

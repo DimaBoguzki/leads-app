@@ -1,0 +1,31 @@
+# Node modules for both client and server
+client/lead_form/node_modules/
+server/node_modules/
+
+# Vite build output
+client/lead_form/dist/
+
+# Environment variable files
+.env
+client/lead_form/.env
+server/.env
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files (optional, adjust to your editor)
+.vscode/
+.idea/
+
+# Build output for server (if any)
+server/build/
+
+# Dependency directories (if any other than node_modules)

@@ -3,7 +3,7 @@ import { handleCreateLead, handleGetLeads } from './lead.controller';
 
 const router = express.Router();
 
-router.get('/', handleGetLeads);
-router.post('/', handleCreateLead);
+router.get( '/', handleGetLeads );
+router.post( '/', handleCreateLead );
 
 export default router;
