@@ -23,6 +23,7 @@ type FormContext = {
   lookingForForm: UseFormReturn<UserLookingFor, any, UserLookingFor>;
   next: () => void;
   back: () => void;
+  reset: () => void;
 }
 
 

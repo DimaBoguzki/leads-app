@@ -1,7 +1,8 @@
-import { Box, Button, Container, Divider, Stack, TextField } from "@mui/material";
+import { Box, Button, CircularProgress, Container, Divider, Stack, TextField } from "@mui/material";
 import { useFormContext } from "../../context/formContext";
 import { CheckBoxGroup } from "../CheckboxGroup";
 import { ctreateLead } from "../../service";
+import { useState } from "react";
 
 const areaOptions = [
   'גבעת רם',
@@ -37,6 +38,9 @@ const priorityOptions = [
 
 function lookingForForm() {
   const { lookingForForm, userInfoForm } = useFormContext();
+  const [ loading, setLoading ] = useState<boolean>( false );
+
+  const { reset } = useFormContext();
 
   const onSubmit = () => {
     lookingForForm.handleSubmit( async ( data ) => {
@@ -44,6 +48,7 @@ function lookingForForm() {
       const userInfo = userInfoForm.getValues();
       console.log( userInfo );
       console.log( data );
+      setLoading( true );
       const res = await ctreateLead( {
         ...userInfo,
         ...data,
@@ -51,8 +56,11 @@ function lookingForForm() {
         max_budget: Number( data.max_budget ),
         number_rooms: [ '5', '5+' ]
       } );
+
       console.log( res );
       alert( 'הפרטים נשלחו בהצלחה, נחזור אליכם בהקדם!' );
+      setLoading( false );
+      reset();
     } )()
   }
 
@@ -133,9 +141,13 @@ function lookingForForm() {
             sx={ {
               fontWeight: 600,
               borderRadius: 3,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             } }
           >
-            בואו נמצא את הנכס שלכם
+            { loading ? <CircularProgress size={ 20 } /> : 'בואו נמצא את הנכס שלכם' }
+
           </Button>
         </Stack>
       </Container>

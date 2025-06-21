@@ -7,7 +7,8 @@ const FormContext = createContext<FormContext>( {
   userInfoForm: {} as any,
   lookingForForm: {} as any,
   next: () => void 0,
-  back: () => void 0
+  back: () => void 0,
+  reset: () => void 0
 } );
 
 const useFormContext = () => useContext( FormContext );
@@ -30,8 +31,14 @@ function FormProvider( { children }: { children: React.ReactNode } ) {
     }
   } );
 
+  const reset = useCallback( () => {
+    userInfoForm.reset();
+    lookingForForm.reset();
+    setIndex( 0 );
+  }, [ userInfoForm, lookingForForm ] );
+
   return (
-    <FormContext.Provider value={ { index, userInfoForm, lookingForForm, next, back } }>
+    <FormContext.Provider value={ { index, userInfoForm, lookingForForm, next, back, reset } }>
       { children }
     </FormContext.Provider>
   );
