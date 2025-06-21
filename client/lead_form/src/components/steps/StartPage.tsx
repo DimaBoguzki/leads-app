@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box, Typography, Button, Container, Stack } from '@mui/material';
+import { Box, Typography, Button, Container, Stack, Link } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import { useFormContext } from "../../context/formContext";
@@ -33,6 +33,16 @@ const StartPage = memo( () => {
             pic={ import.meta.env.VITE_PICTURE_URL }
             width={ 150 }
           />
+          <Stack>
+            <Typography fontWeight={ 700 } gutterBottom>
+              אמיל יקורלי
+            </Typography>
+            <Link href="tel:05427222668" underline="none" color="secondary">
+              <Typography fontWeight={ 700 } color="primary">
+                054-272-2668 📞
+              </Typography>
+            </Link>
+          </Stack>
           <Typography variant="h2" fontWeight={ 700 } gutterBottom>
             Dream House
           </Typography>
