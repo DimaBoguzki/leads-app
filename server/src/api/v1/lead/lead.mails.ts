@@ -1,7 +1,8 @@
 import { Resend } from 'resend';
 import { ILead } from './lead.model';
 
-const resend = new Resend( 're_Mb2URhjw_3iXJHFgBw9qDGWXknJkQeBTc' );
+
+
 
 
 
@@ -48,6 +49,7 @@ class LeadMails {
       throw new Error( 'Invalid parameters: "to" and "lead" are required .' );
     }
     // env SEND_tO
+    const resend = new Resend( process.env.RESEND_KEY );
 
     return await resend.emails.send( {
       from: 'Emil <onboarding@resend.dev>',
