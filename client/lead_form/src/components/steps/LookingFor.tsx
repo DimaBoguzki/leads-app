@@ -4,6 +4,9 @@ import { CheckBoxGroup } from "../CheckboxGroup";
 import { ctreateLead } from "../../service";
 import { useState } from "react";
 import { AppLogo } from "../AppLogo";
+import confetti from "canvas-confetti";
+import { MaxBudgetInput } from "../MaxBudgetInput ";
+
 
 const areaOptions = [
   'גבעת רם',
@@ -40,12 +43,33 @@ const priorityOptions = [
   'מעלית',
   'נגישות'
 ]
+const delay = ( ms: number ) => new Promise( resolve => setTimeout( resolve, ms ) );
 
 function lookingForForm() {
   const { lookingForForm, userInfoForm } = useFormContext();
   const [ loading, setLoading ] = useState<boolean>( false );
 
-  const { reset } = useFormContext();
+  const { reset, next } = useFormContext();
+
+  const splash = () => {
+    confetti( {
+      particleCount: 200,
+      spread: 70,
+      origin: { y: 0.6 },
+    } );
+    confetti( {
+      angle: 60,
+      spread: 400,
+      particleCount: 400,
+      origin: { x: 0 }
+    } );
+    confetti( {
+      angle: 60,
+      spread: 400,
+      particleCount: 400,
+      origin: { x: 1 }
+    } );
+  }
 
   const onSubmit = () => {
     lookingForForm.handleSubmit( async ( data ) => {
@@ -58,14 +82,18 @@ function lookingForForm() {
         ...userInfo,
         ...data,
         city: 'כרמיאל',
-        max_budget: Number( data.max_budget ),
+        max_budget: data?.max_budget ? Number( data.max_budget ) : 0,
         number_rooms: [ '5', '5+' ]
       } );
 
-      console.log( res );
-      alert( 'הפרטים נשלחו בהצלחה, נחזור אליכם בהקדם!' );
+      console.log( res )
+
+      splash();
+      await delay( 1000 );
       setLoading( false );
+
       reset();
+      next();
     } )()
   }
 
@@ -115,22 +143,11 @@ function lookingForForm() {
             options={ priorityOptions }
           />
           <Divider />
-          <TextField
-            fullWidth
-            autoComplete="off"
-            label="תקציב מקסימלי"
-            type="number"
-            { ...lookingForForm.register( 'max_budget', {
-              valueAsNumber: true,
-              required: 'שדה חובה',
-              validate: ( value ) => {
-                if ( isNaN( value ) ) return 'חובה להזין מספר בלבד';
-                return true;
-              },
-            } ) }
-            error={ !!lookingForForm.formState.errors.max_budget }
-            helperText={ lookingForForm.formState.errors.max_budget?.message }
-            variant="outlined"
+          <MaxBudgetInput
+            control={ lookingForForm.control }
+            formState={ lookingForForm.formState }
+            setValue={ lookingForForm.setValue }
+            watch={ lookingForForm.watch }
           />
           <TextField
             fullWidth

@@ -26,15 +26,13 @@ function FormProvider( { children }: { children: React.ReactNode } ) {
       area: [],
       type: [],
       number_rooms: [],
-      priority: [],
-      max_budget: 0
+      priority: []
     }
   } );
 
   const reset = useCallback( () => {
     userInfoForm.reset();
     lookingForForm.reset();
-    setIndex( 0 );
   }, [ userInfoForm, lookingForForm ] );
 
   return (

@@ -1,13 +1,11 @@
 import { memo } from "react";
-import { Box, Typography, Button, Container, Stack, Link } from '@mui/material';
+import { Box, Typography, Container, Stack, Link } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
-import { useFormContext } from "../../context/formContext";
-import confetti from "canvas-confetti";
 
 
-const StartPage = memo( () => {
-  const { next } = useFormContext();
+
+const EndPage = memo( () => {
 
   return (
 
@@ -31,6 +29,9 @@ const StartPage = memo( () => {
       </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
         <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
+          <Typography variant="h5" fontWeight={ 700 } mt={ 2 }>
+            תודה רבה על שבחרתם בי!
+          </Typography>
           <AppLogo
             key={ 'aaa' }
             pic={ import.meta.env.VITE_PICTURE_URL }
@@ -46,21 +47,6 @@ const StartPage = memo( () => {
               </Typography>
             </Link>
           </Stack>
-          <Typography variant="h2" fontWeight={ 700 } gutterBottom>
-            Dream House
-          </Typography>
-          <Typography variant="h5" fontWeight={ 300 } gutterBottom>
-            החיפוש אחר נכס החלומות שלכם, מתחיל כאן!
-          </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            sx={ { mt: 4, fontWeight: 600 } }
-            onClick={ next }
-          >
-            מילוי פרטים קצר
-          </Button>
         </Stack>
       </Container>
     </Box>
@@ -69,4 +55,4 @@ const StartPage = memo( () => {
 } );
 
 
-export default StartPage;
+export default EndPage;

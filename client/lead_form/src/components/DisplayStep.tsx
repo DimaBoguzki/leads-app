@@ -1,8 +1,13 @@
-import { lazy, Suspense } from 'react'
+import { Box, LinearProgress } from '@mui/material'
+import { Suspense } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
-const StartPage = lazy(() => import('../components/steps/StartPage'))
-const UserInfo = lazy(() => import('../components/steps/UserInfo'))
-const LookingFor = lazy(() => import('../components/steps/LookingFor'))
+import StartPage from '../components/steps/StartPage'
+import UserInfo from '../components/steps/UserInfo'
+import LookingFor from '../components/steps/LookingFor'
+import EndPage from '../components/steps/EndPage'
+
+
 
 const configSteps = [
   {
@@ -16,17 +21,40 @@ const configSteps = [
   {
     name: 'LookingFor',
     component: LookingFor
+  },
+  {
+    name: 'EndPage',
+    component: EndPage
   }
 ]
 
-const DisplayStep = ({index}: {index: number}) => {
-  const step = configSteps?.[index]
+const DisplayStep = ( { index }: { index: number } ) => {
+  const step = configSteps?.[ index ]
 
-  if(!step) return null
-
+  if ( !step ) return null
+  const valueBuffer = ( ( index ) * ( 100 / ( configSteps.length - 1 ) ) )
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <step.component />
+    <Suspense fallback={ <div>Loading...</div> }>
+      <LinearProgress
+        variant="buffer"
+        value={ valueBuffer }
+        valueBuffer={ 100 }
+        sx={ { height: 8, mb: 2 } }
+      />
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={ step.name } // key helps AnimatePresence detect change
+          initial={ { opacity: 0, x: 20 } }
+          animate={ { opacity: 1, x: 0 } }
+          exit={ { opacity: 0, x: -20 } }
+          transition={ { duration: 0.3 } }
+        >
+          <Box>
+            <step.component />
+          </Box>
+        </motion.div>
+      </AnimatePresence>
     </Suspense>
   )
 }
