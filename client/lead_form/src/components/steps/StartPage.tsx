@@ -37,9 +37,9 @@ const StartPage = memo( () => {
             <Typography fontWeight={ 700 } gutterBottom>
               אמיל יקורלי
             </Typography>
-            <Link href="tel:05427222668" underline="none" color="secondary">
-              <Typography fontWeight={ 700 } color="primary">
-                054-272-2668 📞
+            <Link href="tel:0527222668" underline="none" color="secondary">
+              <Typography fontWeight={ 500 } color="#fff">
+                0527-222-668 📞
               </Typography>
             </Link>
           </Stack>
