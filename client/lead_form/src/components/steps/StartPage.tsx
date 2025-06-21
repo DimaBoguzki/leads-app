@@ -3,7 +3,6 @@ import { Box, Typography, Button, Container, Stack, Link } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import { useFormContext } from "../../context/formContext";
-import confetti from "canvas-confetti";
 
 
 const StartPage = memo( () => {
