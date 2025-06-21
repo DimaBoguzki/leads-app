@@ -102,8 +102,16 @@ function lookingForForm() {
           <TextField
             fullWidth
             autoComplete="off"
-            label="תקציב מקסימלי*"
-            { ...lookingForForm.register( 'max_budget', { required: true } ) }
+            label="תקציב מקסימלי"
+            type="number"
+            { ...lookingForForm.register( 'max_budget', {
+              valueAsNumber: true,
+              required: 'שדה חובה',
+              validate: ( value ) => {
+                if ( isNaN( value ) ) return 'חובה להזין מספר בלבד';
+                return true;
+              },
+            } ) }
             error={ !!lookingForForm.formState.errors.max_budget }
             helperText={ lookingForForm.formState.errors.max_budget?.message }
             variant="outlined"
