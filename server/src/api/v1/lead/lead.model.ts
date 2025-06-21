@@ -26,4 +26,4 @@ const LeadSchema: Schema = new Schema( {
   other: { type: String }
 }, { timestamps: true } );
 
-export default mongoose.model<ILead>( 'Lead', LeadSchema );
+export default mongoose.model<ILead>( 'Leads', LeadSchema );
