@@ -3,66 +3,66 @@ import { memo } from "react";
 import { useFormContext } from "../../context/formContext";
 import { AppLogo } from "../AppLogo";
 
-const UserInfo = memo(() => {
+const UserInfo = memo( () => {
   const { userInfoForm, next } = useFormContext()
 
   const onSubmit = () => {
-    userInfoForm.handleSubmit(next)()
+    userInfoForm.handleSubmit( next )()
   }
 
   return (
-    <Box py={2}>
-      <Container 
-        maxWidth="lg" 
-        sx={{ 
-          textAlign: 'center', 
-        }}
+    <Box py={ 2 }>
+      <Container
+        maxWidth="lg"
+        sx={ {
+          textAlign: 'center',
+        } }
       >
         <Stack
-          rowGap={2}
-          p={3}
-          maxWidth={600}
+          rowGap={ 2 }
+          p={ 3 }
+          maxWidth={ 600 }
           margin='0 auto'
         >
-          <AppLogo isRelative />
+          <AppLogo />
           <Typography
             variant="h5"
             align="center"
           >
             פרטים ליצירת קשר
           </Typography>
-          <Divider sx={{ borderColor: 'gray', mb: 3 }} />
-          <Box 
+          <Divider sx={ { borderColor: 'gray', mb: 3 } } />
+          <Box
             display='grid'
             gridTemplateColumns='repeat(2,1fr)'
-            gap={3}
+            gap={ 3 }
           >
             <TextField
               fullWidth
               autoComplete="off"
               label="שם פרטי *"
-              {...userInfoForm.register('firstName', { required: true })}
-              error={!!userInfoForm.formState.errors.firstName}
-              helperText={userInfoForm.formState.errors.firstName?.message}
+              { ...userInfoForm.register( 'firstName', { required: true } ) }
+              error={ !!userInfoForm.formState.errors.firstName }
+              helperText={ userInfoForm.formState.errors.firstName?.message }
               variant="outlined"
             />
             <TextField
               fullWidth
               autoComplete="off"
               label="שם משפחה *"
-              {...userInfoForm.register('lastName', { required: true })}
-              error={!!userInfoForm.formState.errors.lastName}
-              helperText={userInfoForm.formState.errors.lastName?.message}
+              { ...userInfoForm.register( 'lastName', { required: true } ) }
+              error={ !!userInfoForm.formState.errors.lastName }
+              helperText={ userInfoForm.formState.errors.lastName?.message }
               variant="outlined"
             />
           </Box>
-          <Box display='flex' alignItems='center' flexGrow={1}>
+          <Box display='flex' alignItems='center' flexGrow={ 1 }>
             <TextField
               fullWidth
               autoComplete="off"
               type="tel"
               label="מספר נייד *"
-              {...userInfoForm.register('phone', {
+              { ...userInfoForm.register( 'phone', {
                 required: 'יש להזין מספר נייד',
                 minLength: {
                   value: 9,
@@ -72,24 +72,24 @@ const UserInfo = memo(() => {
                   value: /^(\+972|0)?5[0-9]{8}$/,
                   message: 'מספר נייד לא תקין',
                 },
-              })}
-              error={!!userInfoForm.formState.errors.phone}
-              helperText={userInfoForm.formState.errors.phone?.message}
+              } ) }
+              error={ !!userInfoForm.formState.errors.phone }
+              helperText={ userInfoForm.formState.errors.phone?.message }
               variant="outlined"
             />
           </Box>
-          <Box display='flex' alignItems='center' flexGrow={1}>
+          <Box display='flex' alignItems='center' flexGrow={ 1 }>
             <Button
               fullWidth
               variant='contained'
               color='secondary'
-              onClick={onSubmit}
-              sx={{
+              onClick={ onSubmit }
+              sx={ {
                 fontWeight: 600,
                 mt: 2,
                 py: 2,
                 borderRadius: 3,
-              }}
+              } }
             >
               הכנס החלומות שלך
             </Button>
@@ -99,6 +99,6 @@ const UserInfo = memo(() => {
       </Container>
     </Box>
   )
-});
+} );
 
 export default UserInfo;
