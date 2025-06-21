@@ -10,11 +10,8 @@ export const handleCreateLead = async ( req: Request, res: Response ) => {
     const lead = await createLead( parsed );
     const service = new LeadMails( lead, 'fromLEad' );
 
-    const res1 = await service.send( 'emilyakoeli86@gmail.com' );
-    const res2 = await service.send( 'dimaboguzki@gmail.com' );
-
+    const res1 = await service.send();
     console.log( res1, 'res1' );
-    console.log( res2, 'res2' );
 
     res.status( 201 ).json( lead );
   } catch ( err: any ) {

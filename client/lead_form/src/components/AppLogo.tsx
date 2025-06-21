@@ -2,27 +2,30 @@ import { Box } from "@mui/material";
 import { memo } from "react";
 import Logo from '../assets/img/logo.jpg';
 
-const AppLogo = memo(({isRelative}: {isRelative?: boolean})=>{
+const AppLogo = memo( ( { pic, width }: { pic?: string; width?: number } ) => {
+
   return (
-    <Box 
-      sx={!isRelative ? {
-        position: 'absolute',
-        top: t=>t.spacing(2),
-        left: t=>t.spacing(2),
+    <Box
+      sx={ {
         borderRadius: 2,
         boxShadow: 1,
-        overflow: 'hidden',     
-      } : undefined}
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+      } }
     >
-      <img 
-        src={Logo} alt="Logo" 
-        style={{ 
-          width:250, height: 200, objectFit: 'cover', overflow: 'hidden'
-        }} 
+      <img
+        src={ pic || Logo } alt="Logo"
+        loading="lazy"
+
+        style={ {
+          width: width || 120, objectFit: 'cover', overflow: 'hidden',
+          objectPosition: 'center',
+        } }
       />
     </Box>
   )
-},(p,n) => p.isRelative === n.isRelative);
+}, ( p, n ) => p.pic === n.pic );
 
 export {
   AppLogo

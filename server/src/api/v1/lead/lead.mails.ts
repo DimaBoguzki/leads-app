@@ -42,13 +42,16 @@ class LeadMails {
     };
   };
 
-  send = async ( to: string ) => {
-    if ( !to || !this.html ) {
-      throw new Error( 'Invalid parameters: "to" and "lead" are required.' );
+  send = async () => {
+    const sendTo = process.env.SEND_tO || '';
+    if ( !sendTo || !this.html || !this.subject ) {
+      throw new Error( 'Invalid parameters: "to" and "lead" are required .' );
     }
+    // env SEND_tO
+
     return await resend.emails.send( {
       from: 'Emil <onboarding@resend.dev>',
-      to: [ to ],
+      to: sendTo,
       subject: this.subject,
       html: this.html
     } );
