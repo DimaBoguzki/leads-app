@@ -18,13 +18,16 @@ const UserInfo = memo( () => {
           textAlign: 'center',
         } }
       >
+        <Box display='flex' justifyContent='center' >
+          <AppLogo width={ 220 } />
+        </Box>
         <Stack
           rowGap={ 2 }
           p={ 3 }
           maxWidth={ 600 }
           margin='0 auto'
         >
-          <AppLogo />
+
           <Typography
             variant="h5"
             align="center"
@@ -85,13 +88,13 @@ const UserInfo = memo( () => {
               color='secondary'
               onClick={ onSubmit }
               sx={ {
-                fontWeight: 600,
+                fontWeight: 500,
                 mt: 2,
                 py: 2,
                 borderRadius: 3,
               } }
             >
-              הכנס החלומות שלך
+              מיד מתחיל חיפוש נכס החלומות שלכם
             </Button>
           </Box>
 

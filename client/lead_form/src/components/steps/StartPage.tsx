@@ -25,13 +25,13 @@ const StartPage = memo( () => {
         position: 'absolute',
         top: 0, right: 0, bottom: 0, p: 2,
       } }>
-        <AppLogo width={ 100 } />
+        <AppLogo width={ 80 } />
       </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
         <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
           <AppLogo
             pic={ import.meta.env.VITE_PICTURE_URL }
-            width={ 190 }
+            width={ 150 }
           />
           <Typography variant="h2" fontWeight={ 700 } gutterBottom>
             Dream House
@@ -43,7 +43,7 @@ const StartPage = memo( () => {
             variant="contained"
             color="secondary"
             size="large"
-            sx={ { mt: 4, fontWeight: 600, fontSize: '1.2rem' } }
+            sx={ { mt: 4, fontWeight: 600 } }
             onClick={ next }
           >
             מילוי פרטים קצר

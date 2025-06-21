@@ -1,30 +1,30 @@
 import { createTheme } from '@mui/material/styles';
 import { heIL } from '@mui/material/locale';
 
-const theme = createTheme({
+const theme = createTheme( {
   palette: {
-    mode: 'light', 
+    mode: 'light',
     primary: {
       main: '#ed5b2c',
-      light: '#ff8f5a',    
-      dark: '#b2401f',  
+      light: '#ff8f5a',
+      dark: '#b2401f',
       contrastText: '#ffffff',
     },
 
     secondary: {
       main: '#ffcf6d',
-      light: '#ffe39e', 
-      dark: '#cc9e3c',  
+      light: '#ffe39e',
+      dark: '#cc9e3c',
       contrastText: '#212121',
     },
     info: {
       main: '#61a6ab',
-      light: '#8fd0d4', 
-      dark: '#3e7b7f',     
+      light: '#8fd0d4',
+      dark: '#3e7b7f',
       contrastText: '#ffffff',
     },
     background: {
-      default: '#111111',
+      default: '#000000',
       paper: '#ffffff',
     },
 
@@ -41,7 +41,7 @@ const theme = createTheme({
         },
         root: {
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#61a6ab', 
+            borderColor: '#61a6ab',
           },
         },
       },
@@ -51,7 +51,7 @@ const theme = createTheme({
         root: {
           color: '#ddd',
           '&.Mui-focused': {
-            color: '#61a6ab', 
+            color: '#61a6ab',
           },
         },
       },
@@ -60,7 +60,7 @@ const theme = createTheme({
   typography: {
     fontFamily: `'Rubik', sans-serif`,
   }
-  
-}, heIL);
+
+}, heIL );
 
 export default theme;

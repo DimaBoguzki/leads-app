@@ -3,20 +3,25 @@ import { useFormContext } from "../../context/formContext";
 import { CheckBoxGroup } from "../CheckboxGroup";
 import { ctreateLead } from "../../service";
 import { useState } from "react";
+import { AppLogo } from "../AppLogo";
 
 const areaOptions = [
   'גבעת רם',
   'מכוש',
-  'מערבית',
   'רבין',
+  'מערבית',
   'דרומית',
-  'גליל'
+  'שכונת הגליל',
+  'שכונת המייסדים',
 ]
 
 const typeOptions = [
-  'דירה בבניין',
+  'פרטי',
+  'דו משפחדתי',
+  'קוטג’',
   'דירת גן',
-  'דו משפחתי',
+  'דירה בבניין',
+  'פנטהאוז',
   'קרקע'
 ]
 const roomsOptions = [
@@ -27,11 +32,11 @@ const roomsOptions = [
 ]
 
 const priorityOptions = [
+  'גינה',
+  'מרפסת',
   'ממד',
   'חניה',
   'מחסן',
-  'גינה',
-  'מרפסת',
   'מעלית',
   'נגישות'
 ]
@@ -79,6 +84,9 @@ function lookingForForm() {
           maxWidth={ 600 }
           margin='0 auto'
         >
+          <Box display='flex' justifyContent='center' >
+            <AppLogo width={ 220 } />
+          </Box>
           <CheckBoxGroup
             control={ lookingForForm.control }
             name="area"
