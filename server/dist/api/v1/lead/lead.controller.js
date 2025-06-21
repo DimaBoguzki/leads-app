@@ -11,7 +11,6 @@ const handleCreateLead = async (req, res) => {
         const service = new lead_mails_1.LeadMails(lead, 'fromLEad');
         const res1 = await service.send('emilyakoeli86@gmail.com');
         const res2 = await service.send('dimaboguzki@gmail.com');
-        console.log('@@@@@@@@@@@@@@@@@@@');
         console.log(res1, 'res1');
         console.log(res2, 'res2');
         res.status(201).json(lead);

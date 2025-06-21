@@ -6,8 +6,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getLeads = exports.createLead = void 0;
 const lead_model_1 = __importDefault(require("./lead.model"));
 const createLead = async (input) => {
-    const lead = new lead_model_1.default(input);
-    return await lead.save();
+    try {
+        const lead = await lead_model_1.default.create(input);
+        console.log(lead);
+        return lead;
+    }
+    catch (error) {
+        console.error('Error creating lead:', error);
+        throw new Error('Failed to create lead');
+    }
 };
 exports.createLead = createLead;
 const getLeads = async () => {

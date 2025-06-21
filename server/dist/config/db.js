@@ -10,6 +10,7 @@ const connectDB = async () => {
         const mongoUri = process.env.MONGO_URI || '';
         console.log(mongoUri, 'mongoUri');
         await mongoose_1.default.connect(mongoUri);
+        console.log('Connected to DB:', mongoose_1.default.connection.name);
         console.log('✅ MongoDB connected');
     }
     catch (err) {
