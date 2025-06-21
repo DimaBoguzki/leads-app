@@ -52,7 +52,7 @@ const DisplayStep = ( { index }: { index: number } ) => {
           exit={ { opacity: 0, x: -20 } }
           transition={ { duration: 0.3 } }
         >
-          <Box>
+          <Box >
             <step.component />
           </Box>
         </motion.div>

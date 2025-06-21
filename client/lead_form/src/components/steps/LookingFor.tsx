@@ -106,15 +106,15 @@ function lookingForForm() {
           textAlign: 'center',
         } }
       >
+        <Box display='flex' justifyContent='center' >
+          <AppLogo width={ 220 } />
+        </Box>
         <Stack
           rowGap={ 2 }
           p={ 3 }
           maxWidth={ 600 }
           margin='0 auto'
         >
-          <Box display='flex' justifyContent='center' >
-            <AppLogo width={ 220 } />
-          </Box>
           <CheckBoxGroup
             control={ lookingForForm.control }
             name="area"
