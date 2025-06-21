@@ -1,6 +1,7 @@
 # Node modules for both client and server
 client/lead_form/node_modules/
 server/node_modules/
+server/dist/
 
 # Vite build output
 client/lead_form/dist/
