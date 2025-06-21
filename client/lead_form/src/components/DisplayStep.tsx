@@ -35,13 +35,15 @@ const DisplayStep = ( { index }: { index: number } ) => {
   const valueBuffer = ( ( index ) * ( 100 / ( configSteps.length - 1 ) ) )
   return (
     <Suspense fallback={ <div>Loading...</div> }>
-      <LinearProgress
-        variant="buffer"
-        value={ valueBuffer }
-        valueBuffer={ 100 }
-        sx={ { height: 8, mb: 2 } }
-      />
-
+      <Box sx={ { width: '100%', position: 'sticky', top: 0 } }>
+        <LinearProgress
+          color='primary'
+          variant="buffer"
+          value={ valueBuffer }
+          valueBuffer={ 100 }
+          sx={ { height: 8, mb: 2 } }
+        />
+      </Box>
       <AnimatePresence mode="wait">
         <motion.div
           key={ step.name } // key helps AnimatePresence detect change

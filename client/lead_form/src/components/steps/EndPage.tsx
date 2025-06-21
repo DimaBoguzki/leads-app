@@ -21,11 +21,13 @@ const EndPage = memo( () => {
         color: '#fff',
       } }
     >
-      <Box sx={ {
-        position: 'absolute',
-        top: 0, right: 0, bottom: 0, p: 2,
-      } }>
-        <AppLogo width={ 80 } key={ '2121212' } />
+      <Box
+        sx={ {
+          position: 'fixed',
+          top: 8, right: 0, bottom: 0, p: 2,
+        } }
+      >
+        <AppLogo width={ 80 } />
       </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
         <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
