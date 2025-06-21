@@ -39,12 +39,12 @@ const EndPage = memo( () => {
             pic={ import.meta.env.VITE_PICTURE_URL }
             width={ 150 }
           />
-          <Stack>
-            <Typography fontWeight={ 700 } gutterBottom>
-              אמיל יקורלי
+          <Stack justifyContent='center'>
+            <Typography fontWeight={ 700 } textAlign='center'>
+              אמיל יקואלי
             </Typography>
             <Link href="tel:0527222668" underline="none" color="secondary">
-              <Typography fontWeight={ 500 } color="#fff">
+              <Typography fontWeight={ 500 } color="#fff" textAlign='center'>
                 0527-222-668 📞
               </Typography>
             </Link>

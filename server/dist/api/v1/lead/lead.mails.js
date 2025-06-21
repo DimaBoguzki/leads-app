@@ -2,18 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LeadMails = void 0;
 const resend_1 = require("resend");
-const resend = new resend_1.Resend('re_Mb2URhjw_3iXJHFgBw9qDGWXknJkQeBTc');
 class LeadMails {
     constructor(lead, type) {
         this.subject = '';
         this.html = '';
-        this.send = async (to) => {
-            if (!to || !this.html) {
-                throw new Error('Invalid parameters: "to" and "lead" are required.');
+        this.send = async () => {
+            const sendTo = process.env.SEND_tO || '';
+            if (!sendTo || !this.html || !this.subject) {
+                throw new Error('Invalid parameters: "to" and "lead" are required .');
             }
+            // env SEND_tO
+            const resend = new resend_1.Resend(process.env.RESEND_KEY);
             return await resend.emails.send({
                 from: 'Emil <onboarding@resend.dev>',
-                to: [to],
+                to: sendTo,
                 subject: this.subject,
                 html: this.html
             });

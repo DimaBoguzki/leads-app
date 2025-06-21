@@ -9,10 +9,8 @@ const handleCreateLead = async (req, res) => {
         const parsed = lead_schema_1.leadSchema.parse(req.body);
         const lead = await (0, lead_handler_1.createLead)(parsed);
         const service = new lead_mails_1.LeadMails(lead, 'fromLEad');
-        const res1 = await service.send('emilyakoeli86@gmail.com');
-        const res2 = await service.send('dimaboguzki@gmail.com');
+        const res1 = await service.send();
         console.log(res1, 'res1');
-        console.log(res2, 'res2');
         res.status(201).json(lead);
     }
     catch (err) {
