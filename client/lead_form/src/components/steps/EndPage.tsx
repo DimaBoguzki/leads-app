@@ -31,9 +31,14 @@ const EndPage = memo( () => {
       </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
         <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
-          <Typography variant="h5" fontWeight={ 700 } mt={ 2 }>
-            תודה רבה על שבחרתם בי!
-          </Typography>
+          <Stack mt={ 2 }>
+            <Typography variant="h5" fontWeight={ 700 } >
+              תודה על שיתוף הפעולה
+            </Typography>
+            <Typography variant="h6" fontWeight={ 700 }>
+              בקרוב נשלח אליכם נכסים רלוונטים
+            </Typography>
+          </Stack>
           <AppLogo
             key={ 'aaa' }
             pic={ import.meta.env.VITE_PICTURE_URL }

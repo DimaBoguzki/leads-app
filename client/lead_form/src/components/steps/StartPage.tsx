@@ -20,6 +20,8 @@ const StartPage = memo( () => {
         alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
+        flexGrow: 1,
+        overflowY: 'hidden',
       } }
     >
       <Box

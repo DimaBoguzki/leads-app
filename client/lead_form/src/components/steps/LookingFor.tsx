@@ -99,84 +99,79 @@ function lookingForForm() {
 
 
   return (
-    <Box py={ 2 }>
-      <Container
-        maxWidth="lg"
-        sx={ {
-          textAlign: 'center',
-        } }
-      >
-        <Box display='flex' justifyContent='center' >
-          <AppLogo width={ 220 } />
-        </Box>
-        <Stack
-          rowGap={ 2 }
-          p={ 3 }
-          maxWidth={ 600 }
-          margin='0 auto'
-        >
-          <CheckBoxGroup
-            control={ lookingForForm.control }
-            name="area"
-            label="שכונה"
-            options={ areaOptions }
-          />
-          <Divider />
-          <CheckBoxGroup
-            control={ lookingForForm.control }
-            name="type"
-            label="סוג נכס"
-            options={ typeOptions }
-          />
-          <Divider />
-          <CheckBoxGroup
-            control={ lookingForForm.control }
-            name="number_rooms"
-            label="כמות חדרים"
-            options={ roomsOptions }
-          />
-          <Divider />
-          <CheckBoxGroup
-            control={ lookingForForm.control }
-            name="priority"
-            label="על מה אתם לא מוכנים לוותר"
-            options={ priorityOptions }
-          />
-          <Divider />
-          <MaxBudgetInput
-            control={ lookingForForm.control }
-            formState={ lookingForForm.formState }
-            setValue={ lookingForForm.setValue }
-            watch={ lookingForForm.watch }
-          />
-          <TextField
-            fullWidth
-            autoComplete="off"
-            label="עוד משהו חשוב לך?"
-            multiline
-            rows={ 4 }
-            { ...lookingForForm.register( 'other' ) }
-            variant="outlined"
-          />
-          <Button
-            fullWidth
-            variant='contained'
-            color='secondary'
-            onClick={ onSubmit }
-            sx={ {
-              fontWeight: 600,
-              borderRadius: 3,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            } }
-          >
-            { loading ? <CircularProgress size={ 20 } /> : 'בואו נמצא את הנכס שלכם' }
+    <Stack py={ 2 } flexGrow={ 1 } sx={ { overflowY: 'hidden', alignItems: 'center' } }>
 
-          </Button>
-        </Stack>
-      </Container>
-    </Box>
+      <Box display='flex' justifyContent='center' >
+        <AppLogo width={ 220 } />
+      </Box>
+      <Stack
+        sx={ {
+          overflowY: 'auto', p: 3, rowGap: 2,
+          minWidth: { xs: '100%', sm: 600, md: 700, lg: 800, xl: 900 },
+        } }
+      // margin='0 auto'
+      >
+        <CheckBoxGroup
+          control={ lookingForForm.control }
+          name="area"
+          label="שכונה"
+          options={ areaOptions }
+        />
+        <Divider />
+        <CheckBoxGroup
+          control={ lookingForForm.control }
+          name="type"
+          label="סוג נכס"
+          options={ typeOptions }
+        />
+        <Divider />
+        <CheckBoxGroup
+          control={ lookingForForm.control }
+          name="number_rooms"
+          label="כמות חדרים"
+          options={ roomsOptions }
+        />
+        <Divider />
+        <CheckBoxGroup
+          control={ lookingForForm.control }
+          name="priority"
+          label="על מה אתם לא מוכנים לוותר"
+          options={ priorityOptions }
+        />
+        <Divider />
+        <MaxBudgetInput
+          control={ lookingForForm.control }
+          formState={ lookingForForm.formState }
+          setValue={ lookingForForm.setValue }
+          watch={ lookingForForm.watch }
+        />
+        <TextField
+          fullWidth
+          autoComplete="off"
+          label="עוד משהו חשוב לך?"
+          multiline
+          rows={ 4 }
+          { ...lookingForForm.register( 'other' ) }
+          variant="outlined"
+        />
+        <Button
+          fullWidth
+          variant='contained'
+          color='secondary'
+          onClick={ onSubmit }
+          sx={ {
+            fontWeight: 600,
+            borderRadius: 3,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          } }
+        >
+          { loading ? <CircularProgress size={ 20 } /> : 'בואו נמצא את הנכס שלכם' }
+
+        </Button>
+      </Stack>
+    </Stack>
   );
 }
 

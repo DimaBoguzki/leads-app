@@ -4,4 +4,18 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffe39e;    
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ed5b2c;
 }
