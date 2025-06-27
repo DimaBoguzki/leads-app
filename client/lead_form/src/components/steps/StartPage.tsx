@@ -21,11 +21,11 @@ const StartPage = memo( () => {
         justifyContent: 'center',
         color: '#fff',
         flexGrow: 1,
-        overflowY: 'hidden',
+        overflowY: 'auto',
       } }
     >
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
-        <Stack alignItems="center" justifyContent="center">
+        <Stack alignItems="center" justifyContent="center" mb={ 5 } >
           <Box
             sx={ {
               position: 'relative',
@@ -36,21 +36,21 @@ const StartPage = memo( () => {
           >
             <AppLogo
               pic={ import.meta.env.VITE_PICTURE_URL }
-              width={ 300 }
+              width={ 250 }
             />
           </Box>
-          <AppLogo width={ 200 } />
+          <AppLogo width={ 150 } />
           <Stack justifyContent='center'>
-            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.5rem'>
+            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.4rem'>
               אמיל יקואלי
             </Typography>
             <Link href="tel:0527222668" textAlign='center' >
-              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.5rem'>
+              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.4rem'>
                 0527-222-668
               </Typography>
             </Link>
           </Stack>
-          <Typography variant="h5" fontWeight={ 300 }>
+          <Typography variant="h6" fontWeight={ 400 }>
             החיפוש אחר נכס החלומות שלכם, מתחיל כאן!
           </Typography>
           <Button
