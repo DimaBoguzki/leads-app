@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box, Typography, Container, Stack, Link } from '@mui/material';
+import { Box, Typography, Container, Stack } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import Logo from '../../assets/img/logo.jpg';
