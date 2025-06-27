@@ -21,16 +21,8 @@ const EndPage = memo( () => {
         color: '#fff',
       } }
     >
-      <Box
-        sx={ {
-          position: 'fixed',
-          top: 8, right: 0, bottom: 0, p: 2,
-        } }
-      >
-        <AppLogo width={ 80 } />
-      </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
-        <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
+        <Stack alignItems="center" justifyContent="center">
           <Stack mt={ 2 }>
             <Typography variant="h5" fontWeight={ 700 } >
               תודה על שיתוף הפעולה
@@ -39,21 +31,30 @@ const EndPage = memo( () => {
               בקרוב נשלח אליכם נכסים רלוונטים
             </Typography>
           </Stack>
-          <AppLogo
-            key={ 'aaa' }
-            pic={ import.meta.env.VITE_PICTURE_URL }
-            width={ 150 }
-          />
+          <Box
+            sx={ {
+              position: 'relative',
+              filter: 'brightness(0.8)',
+              top: 50,
+              left: 15
+            } }
+          >
+            <AppLogo
+              pic={ import.meta.env.VITE_PICTURE_URL }
+              width={ 300 }
+            />
+          </Box>
           <Stack justifyContent='center'>
-            <Typography fontWeight={ 700 } textAlign='center'>
+            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.5rem'>
               אמיל יקואלי
             </Typography>
-            <Link href="tel:0527222668" underline="none" color="secondary">
-              <Typography fontWeight={ 500 } color="#fff" textAlign='center'>
-                0527-222-668 📞
+            <Link href="tel:0527222668" textAlign='center' >
+              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.5rem'>
+                0527-222-668
               </Typography>
             </Link>
           </Stack>
+          <AppLogo width={ 200 } />
         </Stack>
       </Container>
     </Box>

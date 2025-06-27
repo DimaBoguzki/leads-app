@@ -78,18 +78,19 @@ function lookingForForm() {
       console.log( userInfo );
       console.log( data );
       setLoading( true );
-      const res = await ctreateLead( {
+      ctreateLead( {
         ...userInfo,
         ...data,
         city: 'כרמיאל',
         max_budget: data?.max_budget ? Number( data.max_budget ) : 0,
         number_rooms: [ '5', '5+' ]
+      } ).catch( ( err ) => {
+        console.error( 'Error creating lead:', err );
+        alert( 'Failed response server' );
+        setLoading( false );
       } );
-
-      console.log( res )
-
       splash();
-      await delay( 1000 );
+      await delay( 3000 );
       setLoading( false );
 
       reset();

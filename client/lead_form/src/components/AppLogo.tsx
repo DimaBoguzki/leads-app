@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { memo } from "react";
 import Logo from '../assets/img/logo.jpg';
 
+
 const AppLogo = memo( ( { pic, width }: { pic?: string; width?: number } ) => {
 
   return (
@@ -12,6 +13,7 @@ const AppLogo = memo( ( { pic, width }: { pic?: string; width?: number } ) => {
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
+        background: 'transparent',
       } }
     >
       <img
@@ -19,8 +21,12 @@ const AppLogo = memo( ( { pic, width }: { pic?: string; width?: number } ) => {
         loading="lazy"
 
         style={ {
-          width: width || 120, objectFit: 'cover', overflow: 'hidden',
+          width: width || 120,
+          objectFit: 'contain',
+          overflow: 'hidden',
           objectPosition: 'center',
+          backgroundColor: 'transparent',
+          display: 'block'
         } }
       />
     </Box>

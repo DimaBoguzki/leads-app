@@ -24,34 +24,33 @@ const StartPage = memo( () => {
         overflowY: 'hidden',
       } }
     >
-      <Box
-        sx={ {
-          position: 'fixed',
-          top: 8, right: 0, bottom: 0, p: 2,
-        } }
-      >
-        <AppLogo width={ 80 } />
-      </Box>
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
-        <Stack rowGap={ 2 } alignItems="center" justifyContent="center">
-          <AppLogo
-            pic={ import.meta.env.VITE_PICTURE_URL }
-            width={ 150 }
-          />
+        <Stack alignItems="center" justifyContent="center">
+          <Box
+            sx={ {
+              position: 'relative',
+              filter: 'brightness(0.8)',
+              top: 70,
+              left: 15
+            } }
+          >
+            <AppLogo
+              pic={ import.meta.env.VITE_PICTURE_URL }
+              width={ 300 }
+            />
+          </Box>
+          <AppLogo width={ 200 } />
           <Stack justifyContent='center'>
-            <Typography fontWeight={ 700 } textAlign='center'>
+            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.5rem'>
               אמיל יקואלי
             </Typography>
-            <Link href="tel:0527222668" underline="none" color="secondary">
-              <Typography fontWeight={ 500 } color="#fff" textAlign='center'>
-                0527-222-668 📞
+            <Link href="tel:0527222668" textAlign='center' >
+              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.5rem'>
+                0527-222-668
               </Typography>
             </Link>
           </Stack>
-          <Typography variant="h2" fontWeight={ 700 } gutterBottom>
-            Dream House
-          </Typography>
-          <Typography variant="h5" fontWeight={ 300 } gutterBottom>
+          <Typography variant="h5" fontWeight={ 300 }>
             החיפוש אחר נכס החלומות שלכם, מתחיל כאן!
           </Typography>
           <Button
