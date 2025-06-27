@@ -105,8 +105,8 @@ function lookingForForm() {
       <Box display='flex' justifyContent='center' >
         <AppLogo
           pic={ Logo }
-          width={ 220 }
-          height={ 200 }
+          width={ 260 }
+          height={ 260 }
         />
       </Box>
       <Stack

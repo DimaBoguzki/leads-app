@@ -16,12 +16,13 @@ const EndPage = memo( () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
       } }
     >
-      <Container maxWidth="md" sx={ { textAlign: 'center', mt: 5 } }>
-        <Stack alignItems="center" justifyContent="center">
+      <Container maxWidth="md" sx={ { textAlign: 'center' } }>
+        <Stack alignItems="center" justifyContent="center" mb={ 8 }>
 
           <Box className="blur-element" >
             <AppLogo
@@ -30,16 +31,6 @@ const EndPage = memo( () => {
               height={ 180 }
             />
           </Box>
-          {/* <Stack justifyContent='center'>
-            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.5rem'>
-              אמיל יקואלי
-            </Typography>
-            <Link href="tel:0527222668" textAlign='center' >
-              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.5rem'>
-                0527-222-668
-              </Typography>
-            </Link>
-          </Stack> */}
           <Stack mt={ 1 }>
             <Typography variant="h5" fontWeight={ 500 }  >
               תודה על שיתוף הפעולה

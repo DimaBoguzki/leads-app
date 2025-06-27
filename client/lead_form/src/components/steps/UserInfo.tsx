@@ -2,7 +2,7 @@ import { Box, Button, Container, Divider, Stack, TextField, Typography } from "@
 import { memo } from "react";
 import { useFormContext } from "../../context/formContext";
 import { AppLogo } from "../AppLogo";
-
+import Logo from '../../assets/img/logo-transparent.png';
 const UserInfo = memo( () => {
   const { userInfoForm, next } = useFormContext()
 
@@ -19,7 +19,11 @@ const UserInfo = memo( () => {
         } }
       >
         <Box display='flex' justifyContent='center' >
-          <AppLogo width={ 220 } />
+          <AppLogo
+            pic={ Logo }
+            width={ 260 }
+            height={ 260 }
+          />
         </Box>
         <Stack
           rowGap={ 2 }
