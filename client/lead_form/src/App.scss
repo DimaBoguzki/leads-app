@@ -19,3 +19,51 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #ed5b2c;
 }
+
+
+
+.blur-element {
+  animation: blurPulse 2s ease-in-out infinite;
+}
+
+
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(
+    270deg,
+    #ed5b2c,
+    #ffcf6d,
+    #61a6ab,
+    #fff
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blurPulse {
+  0% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}

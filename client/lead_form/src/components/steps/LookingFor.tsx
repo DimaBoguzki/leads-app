@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AppLogo } from "../AppLogo";
 import confetti from "canvas-confetti";
 import { MaxBudgetInput } from "../MaxBudgetInput ";
-
+import Logo from '../../assets/img/logo.jpg';
 
 const areaOptions = [
   'גבעת רם',
@@ -103,7 +103,11 @@ function lookingForForm() {
     <Stack py={ 2 } flexGrow={ 1 } sx={ { overflowY: 'hidden', alignItems: 'center' } }>
 
       <Box display='flex' justifyContent='center' >
-        <AppLogo width={ 220 } />
+        <AppLogo
+          pic={ Logo }
+          width={ 220 }
+          height={ 200 }
+        />
       </Box>
       <Stack
         sx={ {

@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container, Stack, Link } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import { useFormContext } from "../../context/formContext";
-
+import Logo from '../../assets/img/logo.jpg';
 
 const StartPage = memo( () => {
   const { next } = useFormContext();
@@ -31,15 +31,21 @@ const StartPage = memo( () => {
               position: 'relative',
               filter: 'brightness(0.8)',
               top: 70,
-              left: 15
+              left: 15,
+              zIndex: 99,
             } }
           >
             <AppLogo
               pic={ import.meta.env.VITE_PICTURE_URL }
               width={ 250 }
+              height={ 250 }
             />
           </Box>
-          <AppLogo width={ 150 } />
+          <AppLogo
+            pic={ Logo }
+            width={ 200 }
+            height={ 180 }
+          />
           <Stack justifyContent='center'>
             <Typography fontWeight={ 700 } textAlign='center' fontSize='1.4rem'>
               אמיל יקואלי
