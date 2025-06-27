@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container, Stack, Link } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import { useFormContext } from "../../context/formContext";
-import Logo from '../../assets/img/logo.jpg';
+import Logo from '../../assets/img/logo-transparent.png';
 
 const StartPage = memo( () => {
   const { next } = useFormContext();
@@ -13,11 +13,11 @@ const StartPage = memo( () => {
     <Box
       sx={ {
         minHeight: '100vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${bgImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
-        alignItems: 'center',
+
         justifyContent: 'center',
         color: '#fff',
         flexGrow: 1,
@@ -25,37 +25,47 @@ const StartPage = memo( () => {
       } }
     >
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
-        <Stack alignItems="center" justifyContent="center" mb={ 5 } >
+        <Stack alignItems="center" justifyContent="center">
           <Box
             sx={ {
               position: 'relative',
               filter: 'brightness(0.8)',
-              top: 70,
-              left: 15,
-              zIndex: 99,
+              top: 60,
+              right: 0,
             } }
           >
             <AppLogo
               pic={ import.meta.env.VITE_PICTURE_URL }
-              width={ 250 }
-              height={ 250 }
+              width={ 240 }
+              height={ 240 }
             />
           </Box>
-          <AppLogo
-            pic={ Logo }
-            width={ 200 }
-            height={ 180 }
-          />
-          <Stack justifyContent='center'>
-            <Typography fontWeight={ 700 } textAlign='center' fontSize='1.4rem'>
-              אמיל יקואלי
-            </Typography>
-            <Link href="tel:0527222668" textAlign='center' >
-              <Typography fontWeight={ 500 } textAlign='center' fontSize='1.4rem'>
-                0527-222-668
+          <Box display='flex' alignItems='center' >
+            <Box
+              sx={ {
+                position: 'relative',
+                top: 5,
+                left: -5,
+                zIndex: 99,
+              } }
+            >
+              <AppLogo
+                pic={ Logo }
+                width={ 160 }
+                height={ 140 }
+              />
+            </Box>
+            <Stack justifyContent='center'>
+              <Typography fontWeight={ 700 } textAlign='center' fontSize='1.2rem'>
+                אמיל יקואלי
               </Typography>
-            </Link>
-          </Stack>
+              <Link href="tel:0527222668" textAlign='center' >
+                <Typography fontWeight={ 500 } textAlign='center' fontSize='1.2rem'>
+                  0527-222-668
+                </Typography>
+              </Link>
+            </Stack>
+          </Box>
           <Typography variant="h6" fontWeight={ 400 }>
             החיפוש אחר נכס החלומות שלכם, מתחיל כאן!
           </Typography>

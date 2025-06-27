@@ -1,6 +1,6 @@
 import { Box, Skeleton } from "@mui/material";
 import { memo, useState } from "react";
-import Logo from '../assets/img/logo.jpg';
+import Logo from '../assets/img/logo-transparent.png';
 import Placeholder from '../assets/img/placeholder.png';
 
 const AppLogo = memo( ( { pic, width, height }: { pic?: string; width?: number; height?: number } ) => {

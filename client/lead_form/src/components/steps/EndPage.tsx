@@ -12,31 +12,16 @@ const EndPage = memo( () => {
     <Box
       sx={ {
         minHeight: '100vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${bgImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
       } }
     >
-      <Container maxWidth="md" sx={ { textAlign: 'center' } }>
+      <Container maxWidth="md" sx={ { textAlign: 'center', mt: 5 } }>
         <Stack alignItems="center" justifyContent="center">
-          <Box
-            sx={ {
-              position: 'relative',
-              filter: 'brightness(0.8)',
-              top: 60,
-              left: 15
-            } }
-          >
-            <AppLogo
-              pic={ import.meta.env.VITE_PICTURE_URL }
-              width={ 300 }
-              height={ 300 }
-            />
-          </Box>
 
           <Box className="blur-element" >
             <AppLogo
@@ -56,10 +41,10 @@ const EndPage = memo( () => {
             </Link>
           </Stack> */}
           <Stack mt={ 1 }>
-            <Typography variant="h5" fontWeight={ 500 } className="gradient-text" >
+            <Typography variant="h5" fontWeight={ 500 }  >
               תודה על שיתוף הפעולה
             </Typography>
-            <Typography variant="h5" fontWeight={ 400 } className="gradient-text">
+            <Typography variant="h5" fontWeight={ 400 } >
               בקרוב נשלח אליכם נכסים רלוונטים
             </Typography>
           </Stack>
