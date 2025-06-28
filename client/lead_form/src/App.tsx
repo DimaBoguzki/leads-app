@@ -1,16 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Emil from './pages/Emil';
-import Sveta from './pages/Sveta';
-import Moti from './pages/Moti';
+import Form from './Form';
+import { UserInfo } from './data';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <Emil /> } />
-        <Route path="/emil" element={ <Emil /> } />
-        <Route path="/sveta" element={ <Sveta /> } />
-        <Route path="/moti" element={ <Moti /> } />
+        <Route path="/" element={ <Form info={ UserInfo.emil } /> } />
+        <Route path="/emil" element={ <Form info={ UserInfo.emil } /> } />
+        <Route path="/sveta" element={ <Form info={ UserInfo.sveta } /> } />
+        <Route path="/moti" element={ <Form info={ UserInfo.moti } /> } />
       </Routes>
     </BrowserRouter>
   )
