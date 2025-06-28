@@ -21,7 +21,7 @@ app.use( '/api/v1/leads', leadRoutes );
 
 app.use( express.static( clientBuildPath ) );
 
-app.use( ( req, res ) => {
+app.use( '*', ( req, res ) => {
   res.sendFile( path.join( clientBuildPath, 'index.html' ) );
 } );
 
