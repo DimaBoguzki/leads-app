@@ -10,7 +10,8 @@ export const leadSchema = z.object( {
   number_rooms: z.array( z.string() ),
   priority: z.array( z.string() ),
   max_budget: z.number(),
-  other: z.string().optional()
+  other: z.string().optional(),
+  creator: z.string().email(),
 } );
 
 export type LeadInput = z.infer<typeof leadSchema>;

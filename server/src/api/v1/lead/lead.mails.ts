@@ -43,8 +43,7 @@ class LeadMails {
     };
   };
 
-  send = async () => {
-    const sendTo = process.env.SEND_tO || '';
+  send = async ( sendTo: string ) => {
     if ( !sendTo || !this.html || !this.subject ) {
       throw new Error( 'Invalid parameters: "to" and "lead" are required .' );
     }
@@ -52,7 +51,7 @@ class LeadMails {
     const resend = new Resend( process.env.RESEND_KEY );
 
     return await resend.emails.send( {
-      from: 'Emil <onboarding@resend.dev>',
+      from: 'Dream House <onboarding@resend.dev>',
       to: sendTo,
       subject: this.subject,
       html: this.html

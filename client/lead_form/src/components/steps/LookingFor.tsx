@@ -46,7 +46,7 @@ const priorityOptions = [
 const delay = ( ms: number ) => new Promise( resolve => setTimeout( resolve, ms ) );
 
 function lookingForForm() {
-  const { lookingForForm, userInfoForm } = useFormContext();
+  const { lookingForForm, userInfoForm, info } = useFormContext();
   const [ loading, setLoading ] = useState<boolean>( false );
 
   const { reset, next } = useFormContext();
@@ -83,14 +83,15 @@ function lookingForForm() {
         ...data,
         city: 'כרמיאל',
         max_budget: data?.max_budget ? Number( data.max_budget ) : 0,
-        number_rooms: [ '5', '5+' ]
+        number_rooms: [ '5', '5+' ],
+        creator: info.email
       } ).catch( ( err ) => {
         console.error( 'Error creating lead:', err );
         alert( 'Failed response server' );
         setLoading( false );
       } );
       splash();
-      await delay( 3000 );
+      await delay( 2000 );
       setLoading( false );
 
       reset();

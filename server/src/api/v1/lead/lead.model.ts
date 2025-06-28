@@ -11,6 +11,7 @@ export interface ILead extends Document {
   priority: string[];
   max_budget: number;
   other?: string;
+  creator: string;
 }
 
 const LeadSchema: Schema = new Schema( {
@@ -23,7 +24,8 @@ const LeadSchema: Schema = new Schema( {
   number_rooms: { type: [ String ] },
   priority: { type: [ String ] },
   max_budget: { type: Number },
-  other: { type: String }
+  other: { type: String },
+  creator: { type: String, required: true }
 }, { timestamps: true } );
 
 export default mongoose.model<ILead>( 'Leads', LeadSchema );

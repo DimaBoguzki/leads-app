@@ -3,6 +3,7 @@ import { memo } from "react";
 import { useFormContext } from "../../context/formContext";
 import { AppLogo } from "../AppLogo";
 import Logo from '../../assets/img/logo-transparent.png';
+
 const UserInfo = memo( () => {
   const { userInfoForm, next } = useFormContext()
 

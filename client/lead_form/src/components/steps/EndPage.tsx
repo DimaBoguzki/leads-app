@@ -16,15 +16,14 @@ const EndPage = memo( () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
       } }
     >
       <Container maxWidth="md" sx={ { textAlign: 'center' } }>
-        <Stack alignItems="center" justifyContent="center" mb={ 8 }>
-
-          <Box className="blur-element" >
+        <Stack alignItems="center" justifyContent="center" sx={ { mt: 6 } }>
+          <Box>
             <AppLogo
               pic={ Logo }
               width={ 200 }

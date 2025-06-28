@@ -4,9 +4,10 @@ import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
 import { useFormContext } from "../../context/formContext";
 import Logo from '../../assets/img/logo-transparent.png';
+import { formatPhoneNumber } from "../../utils";
 
 const StartPage = memo( () => {
-  const { next } = useFormContext();
+  const { next, info } = useFormContext();
 
   return (
 
@@ -30,12 +31,12 @@ const StartPage = memo( () => {
             sx={ {
               position: 'relative',
               filter: 'brightness(0.8)',
-              top: 60,
+              top: 50,
               right: 0,
             } }
           >
             <AppLogo
-              pic={ import.meta.env.VITE_PICTURE_URL }
+              pic={ info.pic }
               width={ 240 }
               height={ 240 }
             />
@@ -57,11 +58,11 @@ const StartPage = memo( () => {
             </Box>
             <Stack justifyContent='center'>
               <Typography fontWeight={ 700 } textAlign='center' fontSize='1.2rem'>
-                אמיל יקואלי
+                { info.name }
               </Typography>
-              <Link href="tel:0527222668" textAlign='center' >
+              <Link href={ `tel:${info.phone}` } textAlign='center' >
                 <Typography fontWeight={ 500 } textAlign='center' fontSize='1.2rem'>
-                  0527-222-668
+                  { formatPhoneNumber( info.phone ) }
                 </Typography>
               </Link>
             </Stack>
