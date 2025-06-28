@@ -22,8 +22,7 @@ const clientBuildPath = path.join( __dirname, '../../client/lead_form/dist' );
 
 app.use( express.static( clientBuildPath ) );
 
-app.get( '*', ( req, res ) => {
-
+app.get( /^\/(?:emil|sveta|moti)?$/, ( req, res ) => {
   res.sendFile( path.join( clientBuildPath, 'index.html' ) );
 } );
 
