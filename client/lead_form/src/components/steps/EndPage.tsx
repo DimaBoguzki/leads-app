@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Box, Typography, Container, Stack } from '@mui/material';
 import bgImage from '../../assets/img/start-page-house.jpeg';
 import { AppLogo } from "../AppLogo";
-import Logo from '../../assets/img/logo.jpg';
+import Logo from '../../assets/img/logo-transparent.png';
 
 
 const EndPage = memo( () => {
@@ -26,11 +26,11 @@ const EndPage = memo( () => {
           <Box>
             <AppLogo
               pic={ Logo }
-              width={ 200 }
-              height={ 180 }
+              width={ 330 }
+              height={ 330 }
             />
           </Box>
-          <Stack mt={ 1 }>
+          <Stack mt={ 1 } sx={ { position: 'relative', top: -80, zIndex: 99 } } >
             <Typography variant="h5" fontWeight={ 500 }  >
               תודה על שיתוף הפעולה
             </Typography>

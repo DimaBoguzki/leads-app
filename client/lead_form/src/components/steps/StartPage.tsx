@@ -30,8 +30,7 @@ const StartPage = memo( () => {
           <Box
             sx={ {
               position: 'relative',
-              filter: 'brightness(0.8)',
-              top: 50,
+              top: 30,
               right: 0,
             } }
           >

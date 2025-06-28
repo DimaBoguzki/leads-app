@@ -1,7 +1,7 @@
 
 import type { ForMeTheLead } from './types';
-import SvetaPic from './assets/img/sveta.jpg';
-import MotiPic from './assets/img/moti.jpg';
+import SvetaPic from './assets/img/sveta.png';
+import MotiPic from './assets/img/moti.png';
 import EmilPic from './assets/img/emil.png';
 
 const UserInfo: { [ key: string ]: ForMeTheLead } = {

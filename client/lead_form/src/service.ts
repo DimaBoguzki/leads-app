@@ -4,7 +4,7 @@ const ctreateLead = async ( data: any ) => {
   if ( !url ) {
     throw new Error( 'API URL is not defined' );
   }
-  const response = await fetch( `${url}/api/v1/leads`, {
+  const response = await fetch( `/api/v1/leads`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
