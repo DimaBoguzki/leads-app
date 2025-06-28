@@ -13,27 +13,15 @@ const PORT = process.env.PORT || 5000;
 
 app.use( express.json() );
 app.use( cors( { origin: process?.env?.CLIENT_ORIGIN || 'http://localhost:5173' } ) );
+
+
+const clientBuildPath = path.join( __dirname, '../../client/lead_form/dist/' );
+
 app.use( '/api/v1/leads', leadRoutes );
-
-const clientBuildPath = path.join( __dirname, '../../client/lead_form/dist' );
-
-
 app.use( express.static( clientBuildPath ) );
-
-app.get( '/', ( _req, res ) => {
+app.use( ( req, res ) => {
   res.sendFile( path.join( clientBuildPath, 'index.html' ) );
 } );
-app.get( '/emil', ( _req, res ) => {
-  res.sendFile( path.join( clientBuildPath, 'index.html' ) );
-} );
-app.get( '/sveta', ( _req, res ) => {
-  res.sendFile( path.join( clientBuildPath, 'index.html' ) );
-} );
-
-app.get( '/moti', ( _req, res ) => {
-  res.sendFile( path.join( clientBuildPath, 'index.html' ) );
-} );
-
 connectDB().then( () => {
   app.listen( PORT, () => {
     console.log( `🚀 Server running at http://localhost:${PORT}` );
