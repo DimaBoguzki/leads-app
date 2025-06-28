@@ -13,12 +13,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use( express.json() );
 app.use( cors( { origin: process?.env?.CLIENT_ORIGIN || 'http://localhost:5173' } ) );
-
-app.get( '/', ( _req, res ) => {
-  res.send( 'Hello from Express' );
-} );
-
 app.use( '/api/v1/leads', leadRoutes );
+
+const clientBuildPath = path.join( __dirname, '../client/dist' );
+app.use( express.static( clientBuildPath ) );
+
+app.get( '*', ( _req, res ) => {
+  res.sendFile( path.join( clientBuildPath, 'index.html' ) );
+} );
 
 connectDB().then( () => {
   app.listen( PORT, () => {
