@@ -1,0 +1,16 @@
+{
+  "name": "leads-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client/lead_form && npm install && npm run build",
+    "build:server": "cd server && npm install && npm run build",
+    "start": "cd server && npm start",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client/lead_form && npm run dev",
+    "dev:server": "cd server && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
