@@ -10,6 +10,7 @@ function App() {
         <Route path="/emil" element={ <Form info={ UserInfo.emil } /> } />
         <Route path="/sveta" element={ <Form info={ UserInfo.sveta } /> } />
         <Route path="/moti" element={ <Form info={ UserInfo.moti } /> } />
+        <Route path="/dima" element={ <Form info={ UserInfo.dima } /> } />
       </Routes>
     </BrowserRouter>
   )

@@ -3,6 +3,7 @@ import type { ForMeTheLead } from './types';
 import SvetaPic from './assets/img/sveta.png';
 import MotiPic from './assets/img/moti.png';
 import EmilPic from './assets/img/emil.png';
+import DimaPic from './assets/img/placeholder.png';
 
 const UserInfo: { [ key: string ]: ForMeTheLead } = {
   emil: {
@@ -22,6 +23,12 @@ const UserInfo: { [ key: string ]: ForMeTheLead } = {
     phone: '0545866706',
     email: 'motti589@walla.com',
     pic: MotiPic
+  },
+  dima: {
+    name: 'דימה בוגוצקי',
+    phone: '0545866706',
+    email: 'dimaboguzki@gmail.com',
+    pic: DimaPic
   }
 }
 

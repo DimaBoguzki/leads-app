@@ -11,6 +11,7 @@ export const handleCreateLead = async ( req: Request, res: Response ) => {
     const service = new LeadMails( lead, 'fromLEad' );
     const sendTo = process?.env?.NODE_ENV ? 'dimaboguzki@gmail.com' : parsed.creator;
     const res1 = await service.send( sendTo );
+
     console.log( res1, 'res1' );
 
     res.status( 201 ).json( lead );
