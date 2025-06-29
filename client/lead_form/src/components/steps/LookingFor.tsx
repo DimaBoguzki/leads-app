@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AppLogo } from "../AppLogo";
 import confetti from "canvas-confetti";
 import { MaxBudgetInput } from "../MaxBudgetInput ";
-import Logo from '../../assets/img/logo.jpg';
+import Logo from '../../assets/img/logo-transparent.png';
 
 const areaOptions = [
   'גבעת רם',
@@ -103,16 +103,23 @@ function lookingForForm() {
   return (
     <Stack py={ 2 } flexGrow={ 1 } sx={ { overflowY: 'hidden', alignItems: 'center' } }>
 
-      <Box display='flex' justifyContent='center' >
+      <Box
+        display='flex'
+        justifyContent='center'
+        sx={ {
+          position: 'relative',
+          top: 20,
+        } }
+      >
         <AppLogo
           pic={ Logo }
           width={ 260 }
-          height={ 260 }
+          height={ 100 }
         />
       </Box>
       <Stack
         sx={ {
-          overflowY: 'auto', p: 3, rowGap: 2,
+          overflowY: 'auto', p: 3, pb: 15, rowGap: 2,
           minWidth: { xs: '100%', sm: 600, md: 700, lg: 800, xl: 900 },
         } }
       // margin='0 auto'

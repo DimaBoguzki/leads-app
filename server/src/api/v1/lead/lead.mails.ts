@@ -51,7 +51,7 @@ class LeadMails {
     const resend = new Resend( process.env.RESEND_KEY );
 
     return await resend.emails.send( {
-      from: 'Dream House <onboarding@resend.dev>',
+      from: 'Dream House <info@dreamhouse-karmiel.net>',
       to: sendTo,
       subject: this.subject,
       html: this.html

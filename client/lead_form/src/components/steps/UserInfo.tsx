@@ -12,14 +12,21 @@ const UserInfo = memo( () => {
   }
 
   return (
-    <Box py={ 2 }>
+    <Box pb={ 2 }>
       <Container
         maxWidth="lg"
         sx={ {
           textAlign: 'center',
         } }
       >
-        <Box display='flex' justifyContent='center' >
+        <Box
+          display='flex'
+          justifyContent='center'
+          sx={ {
+            position: 'relative',
+            top: 80,
+          } }
+        >
           <AppLogo
             pic={ Logo }
             width={ 260 }
