@@ -9,8 +9,10 @@ export const handleCreateLead = async ( req: Request, res: Response ) => {
     const parsed = leadSchema.parse( req.body );
     const lead = await createLead( parsed );
     const service = new LeadMails( lead, 'fromLEad' );
-    const sendTo = process?.env?.NODE_ENV ? 'dimaboguzki@gmail.com' : parsed.creator;
+    const sendTo = process?.env?.NODE_ENV === 'local' ? 'dimaboguzki@gmail.com' : parsed.creator;
     const res1 = await service.send( sendTo );
+
+    console.log( sendTo, 'sendTo' );
 
     console.log( res1, 'res1' );
 
